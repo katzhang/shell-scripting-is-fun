@@ -5,16 +5,14 @@ slideFile=file-names
 accountFile=account
 
 # read from account.config for id and password
-while read accountInfo || [[ -n "$accountInfo" ]];do
-	echo $accountInfo
-done < $accountFile > somefile
+readAccount (){
+	while read accountInfo || [[ -n "$accountInfo" ]];do
+		echo "$accountInfo"
+	done < $accountFile > $1.ctl
+}
+
+while read -r slideName;do 
+	readAccount $slideName
+done < $slideFile 
 
 exit 0
-
-# while read -r slideName
-# do 
-# 	name=$line
-# 	echo "Line read: $name"
-# done < $file
-
-# exit 0
