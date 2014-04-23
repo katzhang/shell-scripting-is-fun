@@ -1,5 +1,5 @@
 #!/bin/bash
-# do.sh
+# do.sh - create new files based on the name list in file-names and load in account information from account
 
 slideFile=file-names
 accountFile=account
